@@ -6,7 +6,7 @@ import dentalImage from "../assets/images/dental-app.png";
 import hangmanImage from "../assets/images/hangman.png";
 import insta from "../assets/images/insta.png";
 import javaLogo from "../assets/images/java.webp";
-import portfolio from "../assets/images/portfolio.png";
+import portfolio from "../assets/images/site.png";
 import ubb from "../assets/images/ubb-cluj.png";
 const projects = [
   {
