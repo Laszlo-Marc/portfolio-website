@@ -3,10 +3,10 @@ import { Button } from "@/components/ui/button";
 import { ArrowUpRight, ExternalLink, Github } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import dentalImage from "../assets/images/dental-app.png";
-import finance from "../assets/images/finance.webp";
 import hangmanImage from "../assets/images/hangman.png";
 import insta from "../assets/images/insta.png";
 import javaLogo from "../assets/images/java.webp";
+import portfolio from "../assets/images/portfolio.png";
 import ubb from "../assets/images/ubb-cluj.png";
 const projects = [
   {
@@ -30,7 +30,7 @@ const projects = [
     title: "Portfolio Website",
     description:
       "This website, built with React, Vite, TypeScript and Tailwind CSS, showcases my projects and skills.",
-    image: finance,
+    image: portfolio,
     tags: ["React", "Tailwind CSS", "TypeScript", "Vite"],
     githubUrl: "https://github.com/Laszlo-Marc/portfolio-website",
   },
