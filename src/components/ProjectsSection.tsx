@@ -27,6 +27,14 @@ const projects = [
     liveUrl: "https://hangman-react-ts-gamma.vercel.app/",
   },
   {
+    title: "Portfolio Website",
+    description:
+      "This website, built with React, Vite, TypeScript and Tailwind CSS, showcases my projects and skills.",
+    image: finance,
+    tags: ["React", "Tailwind CSS", "TypeScript", "Vite"],
+    githubUrl: "https://github.com/Laszlo-Marc/portfolio-website",
+  },
+  {
     title: "University Work",
     description:
       "A collection of all my assignments and projects from university.",
@@ -65,14 +73,6 @@ const projects = [
     image: javaLogo,
     tags: ["Java"],
     githubUrl: "https://github.com/Laszlo-Marc/Toy-Language-Interpreter",
-  },
-  {
-    title: "Budgeting App",
-    description:
-      "A full stack budgeting application with user authentication, expense tracking, and budget planning features.",
-    image: finance,
-    tags: ["React", "Node.js", "MongoDB", "TypeScript"],
-    githubUrl: "https://github.com/Laszlo-Marc/budgeting-app-frontend",
   },
 ];
 
