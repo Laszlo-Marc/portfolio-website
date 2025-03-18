@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { useEffect, useState } from "react";
-import ShootingStars from "./ShootingStars";
 
 const HeroSection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -74,7 +73,6 @@ const HeroSection = () => {
       id="hero"
       className="min-h-screen relative flex flex-col items-center justify-center pb-20 pt-28 overflow-hidden"
     >
-      <ShootingStars />
       {/* Background animations */}
       <div className="absolute inset-0 bg-grid-pattern opacity-30 z-0" />
 
