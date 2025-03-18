@@ -87,7 +87,7 @@ const ContactSection = () => {
           Get In Touch
         </h2>
         <p
-          className="section-subheading"
+          className="section-subheading font-montserrat"
           style={{ animationPlayState: isVisible ? "running" : "paused" }}
         >
           Feel free to reach out for collaborations, opportunities, or just to
@@ -102,7 +102,9 @@ const ContactSection = () => {
             }`}
             style={{ transitionDelay: "0.1s" }}
           >
-            <h3 className="text-xl font-semibold mb-6">Contact Information</h3>
+            <h3 className="text-xl font-semibold mb-6 font-as">
+              Contact Information
+            </h3>
 
             <div className="space-y-6">
               {[
@@ -130,7 +132,9 @@ const ContactSection = () => {
                     <item.icon size={20} />
                   </div>
                   <div>
-                    <h4 className="font-medium">{item.title}</h4>
+                    <h4 className="font-medium font-montserratBold">
+                      {item.title}
+                    </h4>
                     {item.href ? (
                       <a
                         href={item.href}
@@ -147,7 +151,9 @@ const ContactSection = () => {
             </div>
 
             <div>
-              <h3 className="text-xl font-semibold mb-4">Connect With Me</h3>
+              <h3 className="text-xl font-semibold mb-4 font-montserrat">
+                Connect With Me
+              </h3>
               <div className="flex space-x-4">
                 {[
                   {
@@ -193,7 +199,7 @@ const ContactSection = () => {
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-sm font-medium mb-1"
+                  className="block text-sm font-medium mb-1 font-montserratBold"
                 >
                   Your Name
                 </label>
@@ -211,7 +217,7 @@ const ContactSection = () => {
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium mb-1"
+                  className="block text-sm font-medium mb-1 font-montserratBold"
                 >
                   Your Email
                 </label>
@@ -230,7 +236,7 @@ const ContactSection = () => {
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-sm font-medium mb-1"
+                  className="block text-sm font-medium mb-1 font-montserratBold"
                 >
                   Your Message
                 </label>

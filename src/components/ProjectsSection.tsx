@@ -119,7 +119,7 @@ const ProjectsSection = () => {
           My Projects
         </h2>
         <p
-          className="section-subheading"
+          className="section-subheading font-montserrat"
           style={{ animationPlayState: isVisible ? "running" : "paused" }}
         >
           Explore a selection of my recent work showcasing my technical skills
@@ -182,9 +182,11 @@ const ProjectsSection = () => {
 
               <div className="p-6">
                 <div className="flex justify-between items-start mb-2">
-                  <h3 className="text-xl font-semibold">{project.title}</h3>
+                  <h3 className="text-xl font-semibold font-montserrat">
+                    {project.title}
+                  </h3>
                 </div>
-                <p className="text-muted-foreground text-sm mb-4">
+                <p className="text-muted-foreground text-sm mb-4 font-montserratLight">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">

@@ -89,7 +89,7 @@ const AboutSection = () => {
           About Me
         </h2>
         <p
-          className="section-subheading"
+          className="section-subheading font-montserratLight text-lg text-muted-foreground text-center "
           style={{ animationPlayState: isVisible ? "running" : "paused" }}
         >
           Get to know my background, skills, and what drives me as a developer.
@@ -102,25 +102,25 @@ const AboutSection = () => {
             style={{ transitionDelay: "0.1s" }}
           >
             <h3 className="text-2xl font-semibold mb-4">Who I Am</h3>
-            <p className="text-muted-foreground mb-4 text-lg">
+            <p className="text-muted-foreground mb-4 text-lg font-montserratLight">
               I'm a final-year Computer Science at Babes-Bolyai University
               student with a passion for building high-performance, scalable web
               applications. With expertise in frontend, full-stack, and software
               development, I specialize in React, TypeScript and Node.js for
               creating seamless and user-friendly digital experiences.
             </p>
-            <p className="text-muted-foreground mb-4 text-lg">
+            <p className="text-muted-foreground mb-4 text-lg font-montserratLight">
               My academic journey has equipped me with strong foundations in
               algorithms, data structures, and software engineering principles,
               while my personal projects have honed my skills in modern web
               technologies.
             </p>
-            <p className="text-muted-foreground mb-4 text-lg">
+            <p className="text-muted-foreground mb-4 text-lg font-montserratLight">
               Beyond technical skills, I bring a strong problem-solving mindset,
               adaptability, and great communication skills to the table,
               ensuring that I add value to every project I work on.
             </p>
-            <p className="text-muted-foreground text-lg">
+            <p className="text-muted-foreground text-lg font-montserratLight">
               I’m looking for opportunities in frontend development, full-stack
               development, web development, or software engineering, where I can
               apply my expertise, continue learning, and make a meaningful
@@ -147,7 +147,7 @@ const AboutSection = () => {
 
         {/* Education and Achievements */}
         <div className="mt-16">
-          <h3 className="text-xl font-semibold mb-6 text-center">
+          <h3 className="text-xl font-semibold font-as mb-6 text-center">
             Education & Achievements
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -181,9 +181,9 @@ const AboutSection = () => {
                   <div className="p-2 bg-primary/10 rounded-lg text-primary">
                     <item.icon size={20} />
                   </div>
-                  <h4 className="font-medium">{item.title}</h4>
+                  <h4 className="font-medium font-montserrat">{item.title}</h4>
                 </div>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-muted-foreground text-sm font-montserratLight font-bold">
                   {item.description}
                 </p>
               </div>
@@ -193,7 +193,9 @@ const AboutSection = () => {
 
         {/* Services */}
         <div className="mt-16">
-          <h3 className="text-xl font-semibold mb-6 text-center">What I Do</h3>
+          <h3 className="text-xl font-semibold mb-6 text-center font-as">
+            What I Do
+          </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
@@ -243,8 +245,10 @@ const AboutSection = () => {
                 <div className="p-3 bg-primary/10 rounded-lg text-primary w-fit mb-4">
                   <item.icon size={24} />
                 </div>
-                <h4 className="text-lg font-medium mb-2">{item.title}</h4>
-                <p className="text-muted-foreground text-sm">
+                <h4 className="text-lg font-medium mb-2 font-montserrat">
+                  {item.title}
+                </h4>
+                <p className="text-muted-foreground text-sm font-montserratLight font-bold">
                   {item.description}
                 </p>
               </div>

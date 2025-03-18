@@ -69,6 +69,10 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        "pulse-bg": {
+          "0%, 100%": { transform: "scale(1)", opacity: "0.4" },
+          "50%": { transform: "scale(1.05)", opacity: "0.5" },
+        },
         "accordion-down": {
           from: {
             height: "0",
@@ -134,6 +138,14 @@ export default {
             filter: "blur(0)",
           },
         },
+        "parallax-move": {
+          "0%": { transform: "translate(0, 0) scale(1)", opacity: "0.3" },
+          "50%": {
+            transform: "translate(10px, 10px) scale(1.2)",
+            opacity: "0.4",
+          },
+          "100%": { transform: "translate(0, 0) scale(1)", opacity: "0.3" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -143,6 +155,8 @@ export default {
         "slide-in": "slide-in 0.6s ease-out forwards",
         "gradient-shift": "gradient-shift 15s ease infinite",
         "blur-in": "blur-in 0.8s ease-out forwards",
+        "pulse-bg": "pulse-bg 8s ease-in-out infinite",
+        "parallax-move": "parallax-move 6s ease-in-out infinite reverse",
       },
       fontFamily: {
         sans: ["Inter", "sans-serif"],
@@ -150,6 +164,9 @@ export default {
         space: ["Space Age", "space age"],
         timeFont: ["Time Space", "time space"],
         as: ["AS", "as"],
+        montserrat: ["Montserrat", "montserrat"],
+        montserratBold: ["Montserrat Bold", "montserrat-bold"],
+        montserratLight: ["Montserrat Light", "montserrat-light"],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

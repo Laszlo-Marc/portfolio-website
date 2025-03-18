@@ -55,7 +55,9 @@ const SkillsSection = () => {
 
   return (
     <div>
-      <h3 className="text-xl font-semibold mb-4 text-center">My Skills</h3>
+      <h3 className="text-xl font-semibold font-as mb-4 text-center">
+        My Skills
+      </h3>
 
       {/* Desktop Grid */}
       <div className="hidden md:grid grid-cols-4 lg:grid-cols-5 gap-6">
@@ -69,7 +71,9 @@ const SkillsSection = () => {
               alt={skill.name}
               className="w-12 h-12 object-contain"
             />
-            <span className="mt-2 text-sm font-medium">{skill.name}</span>
+            <span className="mt-2 text-sm font-medium font-montserrat">
+              {skill.name}
+            </span>
           </div>
         ))}
       </div>

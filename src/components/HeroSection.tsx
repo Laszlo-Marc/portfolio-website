@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { useEffect, useState } from "react";
+import ShootingStars from "./ShootingStars";
 
 const HeroSection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -73,31 +74,15 @@ const HeroSection = () => {
       id="hero"
       className="min-h-screen relative flex flex-col items-center justify-center pb-20 pt-28 overflow-hidden"
     >
+      <ShootingStars />
       {/* Background animations */}
       <div className="absolute inset-0 bg-grid-pattern opacity-30 z-0" />
 
       {/* Animated gradient background */}
-      <motion.div
-        className="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-primary/10 to-transparent rounded-full blur-3xl z-0"
-        variants={backgroundVariants}
-        animate="animate"
-      />
+      <motion.div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-primary/10 to-transparent rounded-full blur-3xl z-0 animate-pulse-bg" />
 
       {/* Secondary animated gradient */}
-      <motion.div
-        className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-gradient-radial from-secondary/20 to-transparent rounded-full blur-3xl z-0"
-        animate={{
-          x: mousePosition.x * 20 - 10,
-          y: mousePosition.y * 20 - 10,
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.4, 0.3],
-        }}
-        transition={{
-          duration: 6,
-          repeat: Infinity,
-          repeatType: "reverse",
-        }}
-      />
+      <motion.div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-gradient-radial from-secondary/20 to-transparent rounded-full blur-3xl z-0 animate-parallax-move" />
 
       <div className="container relative z-10 max-w-5xl mx-auto px-4 sm:px-6 flex flex-col items-center">
         <motion.div
@@ -154,7 +139,7 @@ const HeroSection = () => {
         </div>
 
         <motion.h2
-          className="text-xl md:text-2xl lg:text-3xl font-medium text-center text-muted-foreground mb-8"
+          className="text-xl md:text-2xl lg:text-3xl font-montserratBold uppercase font-medium text-center text-muted-foreground mb-8"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
@@ -163,7 +148,7 @@ const HeroSection = () => {
         </motion.h2>
 
         <motion.p
-          className="text-center text-muted-foreground max-w-2xl mb-12"
+          className="text-center text-muted-foreground max-w-2xl mb-12 font-montserratLight"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.3 }}
