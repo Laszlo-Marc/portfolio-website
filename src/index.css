@@ -46,6 +46,25 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
+  @font-face {
+    font-family: "Space Age";
+    src: url("./assets/fonts/space-age.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Time Space";
+    src: url("./assets/fonts/time-space.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "AS";
+    src: url("./assets/fonts/as.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;

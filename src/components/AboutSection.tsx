@@ -83,7 +83,7 @@ const AboutSection = () => {
 
       <div className="section-container relative z-10">
         <h2
-          className="section-heading"
+          className="section-heading font-as  uppercase"
           style={{ animationPlayState: isVisible ? "running" : "paused" }}
         >
           About Me

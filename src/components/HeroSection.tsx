@@ -27,7 +27,7 @@ const HeroSection = () => {
     document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const nameTextFirstPart = "Hi, I'm";
+  const nameTextFirstPart = "Hi, I am";
   const nameTextSecondPart = "Marc Laszlo";
   const nameLettersFirstPart = nameTextFirstPart.split("");
   const nameLettersSecondPart = nameTextSecondPart.split("");
@@ -112,7 +112,7 @@ const HeroSection = () => {
         </motion.div>
 
         {/* Name with letter-by-letter animation */}
-        <div className="text-center text-4xl md:text-5xl lg:text-6xl font-bold mb-4 tracking-tight flex flex-wrap justify-center">
+        <div className="text-center text-4xl md:text-5xl lg:text-6xl font-bold font-as uppercase mb-4 tracking-tight flex flex-wrap justify-center">
           {nameLettersFirstPart.map((letter, index) => (
             <motion.span
               key={`${letter}-${index}`}
@@ -132,7 +132,7 @@ const HeroSection = () => {
             </motion.span>
           ))}
         </div>
-        <div className="text-center text-4xl md:text-5xl lg:text-6xl font-bold mb-4 tracking-tight flex flex-wrap justify-center">
+        <div className="text-center text-4xl md:text-5xl lg:text-6xl font-bold uppercase font-as mb-4 tracking-tight flex flex-wrap justify-center">
           {nameLettersSecondPart.map((letter, index) => (
             <motion.span
               key={`${letter}-${index}`}
