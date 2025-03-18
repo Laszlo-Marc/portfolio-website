@@ -1,19 +1,22 @@
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
+
+const textVariants = {
+  hidden: { opacity: 0 },
+  visible: (i) => ({
+    opacity: 1,
+    transition: { delay: i * 0.05 },
+  }),
+};
 
 const HeroSection = () => {
   const scrollToProjects = () => {
-    const projectsSection = document.getElementById("projects");
-    if (projectsSection) {
-      projectsSection.scrollIntoView({ behavior: "smooth" });
-    }
+    document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
   };
 
   const scrollDown = () => {
-    const aboutSection = document.getElementById("about");
-    if (aboutSection) {
-      aboutSection.scrollIntoView({ behavior: "smooth" });
-    }
+    document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -21,83 +24,103 @@ const HeroSection = () => {
       id="hero"
       className="min-h-screen relative flex flex-col items-center justify-center pb-20 pt-28 overflow-hidden"
     >
-      {/* Background grid pattern */}
       <div className="absolute inset-0 bg-grid-pattern opacity-30 z-0" />
-
-      {/* Radial gradient accent */}
       <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-primary/10 to-transparent rounded-full blur-3xl opacity-40 z-0 animate-pulse" />
-
       <div className="container relative z-10 max-w-5xl mx-auto px-6 flex flex-col items-center">
-        {/* Tag line */}
-        <div className="inline-flex items-center mb-6 bg-primary/10 px-3 py-1 rounded-full text-sm text-primary font-medium opacity-0 animate-fade-in border border-primary/20">
+        <div className="inline-flex items-center mb-6 bg-primary/10 px-3 py-1 rounded-full text-sm text-primary font-medium border border-primary/20">
           <span className="w-2 h-2 rounded-full bg-primary mr-2 animate-pulse"></span>
           Available for opportunities
         </div>
 
-        {/* Name and title */}
-        <h1
-          className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-4 tracking-tight opacity-0 animate-fade-in"
-          style={{ animationDelay: "0.2s" }}
-        >
-          Hi, I'm <span className="text-primary">Marc Laszlo</span>
-        </h1>
+        {/* Name animation */}
+        <div className="text-center text-4xl md:text-5xl lg:text-6xl font-bold mb-4 tracking-tight">
+          <motion.span
+            initial="hidden"
+            animate="visible"
+            variants={textVariants}
+            custom={0}
+          >
+            Hi,
+          </motion.span>
+          <motion.span
+            className="block"
+            initial="hidden"
+            animate="visible"
+            variants={textVariants}
+            custom={1}
+          >
+            I'm
+          </motion.span>
+          <motion.span
+            className="block text-primary"
+            initial="hidden"
+            animate="visible"
+            variants={textVariants}
+            custom={2}
+          >
+            Marc Laszlo
+          </motion.span>
+        </div>
 
-        <h2
-          className="text-xl md:text-2xl lg:text-3xl font-medium text-center text-muted-foreground mb-8 opacity-0 animate-fade-in"
-          style={{ animationDelay: "0.3s" }}
+        <motion.h2
+          className="text-xl md:text-2xl lg:text-3xl font-medium text-center text-muted-foreground mb-8"
+          initial="hidden"
+          animate="visible"
+          variants={textVariants}
+          custom={3}
         >
           Fullstack Developer & CS Student
-        </h2>
+        </motion.h2>
 
-        {/* Description */}
-        <p
-          className="text-center text-muted-foreground max-w-2xl mb-12 opacity-0 animate-fade-in"
-          style={{ animationDelay: "0.4s" }}
+        <motion.p
+          className="text-center text-muted-foreground max-w-2xl mb-12"
+          initial="hidden"
+          animate="visible"
+          variants={textVariants}
+          custom={4}
         >
           I build exceptional digital experiences with clean, efficient code.
           Specializing in modern frontend frameworks with robust backend
-          integration. Currently pursuing my Computer Science degree and seeking
-          opportunities.
-        </p>
+          integration.
+        </motion.p>
 
-        {/* CTA Buttons */}
-        <div
-          className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in"
-          style={{ animationDelay: "0.5s" }}
+        <motion.div
+          className="flex flex-col sm:flex-row gap-4"
+          initial="hidden"
+          animate="visible"
+          variants={textVariants}
+          custom={5}
         >
-          <Button
-            size="lg"
-            className="group transition-all duration-300 hover:translate-y-[-2px]"
-            onClick={scrollToProjects}
-          >
+          <Button size="lg" onClick={scrollToProjects}>
             View My Work
-            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
-
           <Button
             variant="outline"
             size="lg"
-            className="transition-all duration-300 hover:translate-y-[-2px]"
-            onClick={() => {
-              const contactSection = document.getElementById("contact");
-              if (contactSection) {
-                contactSection.scrollIntoView({ behavior: "smooth" });
-              }
-            }}
+            onClick={() =>
+              document
+                .getElementById("contact")
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
           >
             Contact Me
           </Button>
-        </div>
+        </motion.div>
       </div>
 
       {/* Scroll indicator */}
-      <button
+      <motion.button
         onClick={scrollDown}
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-muted-foreground hover:text-foreground transition-colors animate-bounce"
+        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex justify-center items-center text-muted-foreground hover:text-foreground transition-colors animate-bounce"
+        initial="hidden"
+        animate="visible"
+        variants={textVariants}
+        custom={6}
         aria-label="Scroll down"
       >
         <ChevronDown size={32} />
-      </button>
+      </motion.button>
     </section>
   );
 };
