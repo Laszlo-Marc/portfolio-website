@@ -169,12 +169,12 @@ const HeroSection = () => {
             whileHover="hover"
             className="w-full sm:w-auto"
           >
-            <a href="src\assets\Resume-Laszlo-Marc.pdf" target="_blank">
+            <a href="/Resume-Laszlo-Marc.pdf" target="_blank">
               <Button
                 size="lg"
                 className="relative overflow-hidden group w-full sm:w-auto"
               >
-                <span className="relative z-10">View My Work</span>
+                <span className="relative z-10">View My Resume</span>
                 <ArrowRight className="ml-2 h-4 w-4 relative z-10 group-hover:translate-x-1 transition-transform" />
                 <motion.span
                   className="absolute inset-0 bg-primary/20"
