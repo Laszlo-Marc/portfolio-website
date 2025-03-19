@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
+import { SERVICE_ID, TEMPLATE_ID, USER_ID } from "@/hidden/hidden";
+import emailjs from "emailjs-com";
 import {
   Github,
   Instagram,
@@ -12,20 +14,60 @@ import {
   Send,
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-
 const ContactSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
-  const { toast } = useToast();
-
+  const index = 0;
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  // Form submission handler
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    // Validate the form data (example)
+    if (!formData.name || !formData.email || !formData.message) {
+      toast({
+        title: "Error",
+        description: "Please fill out all the fields.",
+      });
+      setIsSubmitting(false);
+      return;
+    }
+
+    emailjs.send(SERVICE_ID, TEMPLATE_ID, formData, USER_ID).then(
+      (result) => {
+        toast({
+          title: "Message Sent!",
+          description: "Thanks for reaching out. I'll get back to you soon.",
+        });
+        setFormData({ name: "", email: "", message: "" });
+        setIsSubmitting(false);
+      },
+      (error) => {
+        toast({
+          title: "Error",
+          description:
+            "There was an error sending your message. Please try again.",
+        });
+        setIsSubmitting(false);
+      }
+    );
+  };
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -48,28 +90,6 @@ const ContactSection = () => {
     };
   }, []);
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    // Simulate form submission
-    setTimeout(() => {
-      toast({
-        title: "Message sent!",
-        description: "Thanks for reaching out. I'll get back to you soon.",
-      });
-      setFormData({ name: "", email: "", message: "" });
-      setIsSubmitting(false);
-    }, 1500);
-  };
-
   return (
     <section
       id="contact"
@@ -81,14 +101,20 @@ const ContactSection = () => {
 
       <div className="section-container relative z-10">
         <h2
-          className="section-heading font-as uppercase"
-          style={{ animationPlayState: isVisible ? "running" : "paused" }}
+          className="section-heading font-as uppercase fade-in-slow"
+          style={{
+            animationPlayState: isVisible ? "running" : "paused",
+            transitionDelay: "0.2s",
+          }}
         >
           Get In Touch
         </h2>
         <p
-          className="section-subheading font-montserrat"
-          style={{ animationPlayState: isVisible ? "running" : "paused" }}
+          className="section-subheading font-montserrat fade-in-slow"
+          style={{
+            animationPlayState: isVisible ? "running" : "paused",
+            transitionDelay: "0.4s",
+          }}
         >
           Feel free to reach out for collaborations, opportunities, or just to
           say hello.
@@ -96,13 +122,14 @@ const ContactSection = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12">
           {/* Contact Info */}
-          <div
-            className={`space-y-8 animate-on-scroll ${
-              isVisible ? "visible" : ""
-            }`}
-            style={{ transitionDelay: "0.1s" }}
-          >
-            <h3 className="text-xl font-semibold mb-6 font-as">
+          <div className="space-y-8">
+            <h3
+              className="text-xl font-semibold mb-6 font-as animate-on-scroll fade-in-slow"
+              style={{
+                animationPlayState: isVisible ? "running" : "paused",
+                transitionDelay: "0.5s",
+              }}
+            >
               Contact Information
             </h3>
 
@@ -127,7 +154,14 @@ const ContactSection = () => {
                   href: null,
                 },
               ].map((item) => (
-                <div key={item.title} className="flex items-start">
+                <div
+                  key={item.title}
+                  className="flex items-start animate-on-scroll fade-in-slow"
+                  style={{
+                    animationPlayState: isVisible ? "running" : "paused",
+                    transitionDelay: `${(index + 1) * 0.2}s`,
+                  }}
+                >
                   <div className="p-2 bg-primary/10 rounded-lg text-primary mr-4">
                     <item.icon size={20} />
                   </div>
@@ -151,7 +185,7 @@ const ContactSection = () => {
             </div>
 
             <div>
-              <h3 className="text-xl font-semibold mb-4 font-montserrat">
+              <h3 className="text-xl font-semibold mb-4 font-montserrat animate-on-scroll fade-in-slow">
                 Connect With Me
               </h3>
               <div className="flex space-x-4">
@@ -177,7 +211,10 @@ const ContactSection = () => {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 bg-secondary rounded-full text-muted-foreground hover:text-primary hover:bg-secondary/80 transition-colors"
+                    className="p-3 bg-secondary rounded-full text-muted-foreground hover:text-primary hover:bg-secondary/80 transition-colors animate-on-scroll fade-in-slow"
+                    style={{
+                      transitionDelay: "0.4s",
+                    }}
                     aria-label={item.label}
                   >
                     <item.icon size={20} />
@@ -188,18 +225,15 @@ const ContactSection = () => {
           </div>
 
           {/* Contact Form */}
-          <form
-            onSubmit={handleSubmit}
-            className={`space-y-6 animate-on-scroll ${
-              isVisible ? "visible" : ""
-            }`}
-            style={{ transitionDelay: "0.3s" }}
-          >
+          <form onSubmit={handleSubmit} className="space-y-6 ">
             <div className="space-y-4">
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-sm font-medium mb-1 font-montserratBold"
+                  className="block text-sm font-medium mb-1 font-montserratBold animate-on-scroll fade-in-slow"
+                  style={{
+                    transitionDelay: "0.2s",
+                  }}
                 >
                   Your Name
                 </label>
@@ -210,14 +244,20 @@ const ContactSection = () => {
                   onChange={handleChange}
                   placeholder="John Doe"
                   required
-                  className="w-full"
+                  className="w-full animate-on-scroll fade-in-slow"
+                  style={{
+                    transitionDelay: "0.2s",
+                  }}
                 />
               </div>
 
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium mb-1 font-montserratBold"
+                  className="block text-sm font-medium mb-1 font-montserratBold animate-on-scroll fade-in-slow"
+                  style={{
+                    transitionDelay: "0.4s",
+                  }}
                 >
                   Your Email
                 </label>
@@ -229,14 +269,20 @@ const ContactSection = () => {
                   onChange={handleChange}
                   placeholder="john.doe@example.com"
                   required
-                  className="w-full"
+                  className="w-full animate-on-scroll fade-in-slow"
+                  style={{
+                    transitionDelay: "0.4s",
+                  }}
                 />
               </div>
 
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-sm font-medium mb-1 font-montserratBold"
+                  className="block text-sm font-medium mb-1 font-montserratBold animate-on-scroll fade-in-slow"
+                  style={{
+                    transitionDelay: "0.6s",
+                  }}
                 >
                   Your Message
                 </label>
@@ -247,7 +293,10 @@ const ContactSection = () => {
                   onChange={handleChange}
                   placeholder="How can I help you?"
                   required
-                  className="w-full min-h-[150px]"
+                  className="w-full min-h-[150px] animate-on-scroll fade-in-slow"
+                  style={{
+                    transitionDelay: "0.6s",
+                  }}
                 />
               </div>
             </div>
@@ -255,7 +304,10 @@ const ContactSection = () => {
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="w-full group"
+              className="w-full group animate-on-scroll fade-in-slow"
+              style={{
+                transitionDelay: "0.8s",
+              }}
             >
               {isSubmitting ? (
                 <>Processing...</>

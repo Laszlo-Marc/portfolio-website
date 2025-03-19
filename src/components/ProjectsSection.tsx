@@ -113,14 +113,24 @@ const ProjectsSection = () => {
 
       <div className="section-container relative z-10">
         <h2
-          className="section-heading font-as uppercase"
-          style={{ animationPlayState: isVisible ? "running" : "paused" }}
+          className={` ${
+            isVisible ? "visible" : ""
+          } section-heading font-as uppercase animate-on-scroll fade-in-slow`}
+          style={{
+            transitionDelay: "0.3s",
+            animationPlayState: isVisible ? "running" : "paused",
+          }}
         >
           My Projects
         </h2>
         <p
-          className="section-subheading font-montserrat"
-          style={{ animationPlayState: isVisible ? "running" : "paused" }}
+          className={` ${
+            isVisible ? "visible" : ""
+          } section-subheading font-montserrat animate-on-scroll fade-in-slow`}
+          style={{
+            transitionDelay: "0.6s",
+            animationPlayState: isVisible ? "running" : "paused",
+          }}
         >
           Explore a selection of my recent work showcasing my technical skills
           and problem-solving abilities.
@@ -133,7 +143,7 @@ const ProjectsSection = () => {
               className={`glass-panel rounded-xl overflow-hidden border border-white/30 group hover:shadow-lg transition-all duration-300 animate-on-scroll ${
                 isVisible ? "visible" : ""
               }`}
-              style={{ transitionDelay: `${0.1 + index * 0.1}s` }}
+              style={{ transitionDelay: `${0.3 + index * 0.5}s` }}
             >
               <div className="relative overflow-hidden aspect-[16/9]">
                 <img

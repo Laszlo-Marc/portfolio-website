@@ -140,7 +140,7 @@ const HeroSection = () => {
           className="text-xl md:text-2xl lg:text-3xl font-montserratBold uppercase font-medium text-center text-muted-foreground mb-8"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
+          transition={{ delay: 0.6 }}
         >
           Fullstack Developer & CS Student
         </motion.h2>
@@ -149,7 +149,7 @@ const HeroSection = () => {
           className="text-center text-muted-foreground max-w-2xl mb-12 font-montserratLight"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.3 }}
+          transition={{ delay: 0.8 }}
         >
           I build exceptional digital experiences with clean, efficient code.
           Specializing in modern frontend frameworks with robust backend
@@ -161,7 +161,7 @@ const HeroSection = () => {
           className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.6 }}
+          transition={{ delay: 1 }}
         >
           <motion.div
             variants={buttonHoverVariants}
@@ -169,20 +169,21 @@ const HeroSection = () => {
             whileHover="hover"
             className="w-full sm:w-auto"
           >
-            <Button
-              size="lg"
-              onClick={scrollToProjects}
-              className="relative overflow-hidden group w-full sm:w-auto"
-            >
-              <span className="relative z-10">View My Work</span>
-              <ArrowRight className="ml-2 h-4 w-4 relative z-10 group-hover:translate-x-1 transition-transform" />
-              <motion.span
-                className="absolute inset-0 bg-primary/20"
-                initial={{ x: "-100%" }}
-                whileHover={{ x: "0%" }}
-                transition={{ duration: 0.3 }}
-              />
-            </Button>
+            <a href="src\assets\Resume-Laszlo-Marc.pdf" target="_blank">
+              <Button
+                size="lg"
+                className="relative overflow-hidden group w-full sm:w-auto"
+              >
+                <span className="relative z-10">View My Work</span>
+                <ArrowRight className="ml-2 h-4 w-4 relative z-10 group-hover:translate-x-1 transition-transform" />
+                <motion.span
+                  className="absolute inset-0 bg-primary/20"
+                  initial={{ x: "-100%" }}
+                  whileHover={{ x: "0%" }}
+                  transition={{ duration: 0.3 }}
+                />
+              </Button>
+            </a>
           </motion.div>
 
           <motion.div

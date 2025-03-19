@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import cPlusLogo from "../assets/logos/c.svg";
 import cSharpLogo from "../assets/logos/csharp.svg.png";
@@ -34,37 +34,54 @@ const skills = [
   { name: "MongoDB", logo: mongoLogo },
 ];
 const SkillsSection = () => {
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
 
-  // Auto-scroll effect for mobile carousel
+  // Intersection Observer to detect when the section is visible
   useEffect(() => {
-    const interval = setInterval(() => {
-      if (scrollRef.current) {
-        scrollRef.current.scrollLeft += 1; // Adjust speed here
-        if (
-          scrollRef.current.scrollLeft >=
-          scrollRef.current.scrollWidth - scrollRef.current.clientWidth
-        ) {
-          scrollRef.current.scrollLeft = 0; // Loop back to start
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
         }
-      }
-    }, 30); // Adjust interval speed
+      },
+      { threshold: 0.1 }
+    );
 
-    return () => clearInterval(interval);
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
   }, []);
 
   return (
-    <div>
-      <h3 className="text-xl font-semibold font-as mb-4 text-center">
+    <div ref={sectionRef}>
+      <h3 className="text-xl font-semibold font-as mb-4 text-center fade-in-slow animate-on-scroll">
         My Skills
       </h3>
 
       {/* Desktop Grid */}
-      <div className="hidden md:grid grid-cols-4 lg:grid-cols-5 gap-6">
-        {skills.map((skill) => (
+      <div
+        className="hidden md:grid grid-cols-4 lg:grid-cols-5 gap-6 animate-on-scroll fade-in-slow"
+        style={{
+          animationDelay: "0.2", // Slight delay for each card
+        }}
+      >
+        {skills.map((skill, index) => (
           <div
             key={skill.name}
-            className="flex flex-col items-center justify-center bg-secondary p-4 rounded-xl shadow-md hover:scale-105 transition-transform duration-300"
+            className={`flex flex-col items-center justify-center bg-secondary p-4 rounded-xl shadow-md hover:scale-105 transition-transform duration-300 ${
+              isVisible ? `animate-fade-in-left` : "opacity-0" // Make it invisible initially
+            }`}
+            style={{
+              animationDelay: `${0.5 + index * 0.3}s`, // Slight delay for each card
+            }}
           >
             <img
               src={skill.logo}
@@ -77,10 +94,9 @@ const SkillsSection = () => {
           </div>
         ))}
       </div>
-
       {/* Mobile Carousel */}
       <div
-        ref={scrollRef}
+        ref={sectionRef}
         className="md:hidden flex gap-6 overflow-x-auto scrollbar-hide py-4"
       >
         {skills.map((skill, index) => (

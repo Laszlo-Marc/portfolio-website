@@ -97,30 +97,64 @@ const AboutSection = () => {
 
         <div className="grid grid-cols-1  gap-10 mt-12">
           {/* Bio */}
-          <div
-            className={`animate-on-scroll ${isVisible ? "visible" : ""}`}
-            style={{ transitionDelay: "0.1s" }}
-          >
-            <h3 className="text-2xl font-semibold mb-4">Who I Am</h3>
-            <p className="text-muted-foreground mb-4 text-lg font-montserratLight">
+          <div>
+            <h3
+              className="text-2xl font-semibold mb-4 animate-on-scroll"
+              style={{ animationPlayState: isVisible ? "running" : "paused" }}
+            >
+              Who I Am
+            </h3>
+            <p
+              style={{
+                animationPlayState: isVisible ? "running" : "paused",
+                transitionDelay: "0.3s",
+              }}
+              className={`animate-on-scroll ${
+                isVisible ? "visible" : ""
+              } text-muted-foreground mb-4 text-lg font-montserratLight fade-in-slow`}
+            >
               I'm a final-year Computer Science at Babes-Bolyai University
               student with a passion for building high-performance, scalable web
               applications. With expertise in frontend, full-stack, and software
               development, I specialize in React, TypeScript and Node.js for
               creating seamless and user-friendly digital experiences.
             </p>
-            <p className="text-muted-foreground mb-4 text-lg font-montserratLight">
+            <p
+              style={{
+                animationPlayState: isVisible ? "running" : "paused",
+                transitionDelay: "0.5s",
+              }}
+              className={`animate-on-scroll ${
+                isVisible ? "visible" : ""
+              } text-muted-foreground mb-4 text-lg font-montserratLight fade-in-slow`}
+            >
               My academic journey has equipped me with strong foundations in
               algorithms, data structures, and software engineering principles,
               while my personal projects have honed my skills in modern web
               technologies.
             </p>
-            <p className="text-muted-foreground mb-4 text-lg font-montserratLight">
+            <p
+              style={{
+                animationPlayState: isVisible ? "running" : "paused",
+                transitionDelay: "0.7s",
+              }}
+              className={`animate-on-scroll ${
+                isVisible ? "visible" : ""
+              } text-muted-foreground mb-4 text-lg font-montserratLight fade-in-slow`}
+            >
               Beyond technical skills, I bring a strong problem-solving mindset,
               adaptability, and great communication skills to the table,
               ensuring that I add value to every project I work on.
             </p>
-            <p className="text-muted-foreground text-lg font-montserratLight">
+            <p
+              style={{
+                animationPlayState: isVisible ? "running" : "paused",
+                transitionDelay: "1.0s",
+              }}
+              className={`animate-on-scroll ${
+                isVisible ? "visible" : ""
+              } text-muted-foreground mb-4 text-lg font-montserratLight fade-in-slow`}
+            >
               I’m looking for opportunities in frontend development, full-stack
               development, web development, or software engineering, where I can
               apply my expertise, continue learning, and make a meaningful
@@ -132,7 +166,7 @@ const AboutSection = () => {
                     behavior: "smooth",
                   });
                 }}
-                className="flex items-center text-lg font-semibold text-primary hover:text-blue-600 transition-colors relative py-2 group"
+                className="flex items-center text-lg font-semibold text-primary hover:text-blue-600 transition-colors relative py-2 group animate-fade-in-slow"
               >
                 Let's Connect
                 <ArrowRight className="w-5 h-5 ml-2" />
@@ -147,7 +181,7 @@ const AboutSection = () => {
 
         {/* Education and Achievements */}
         <div className="mt-16">
-          <h3 className="text-xl font-semibold font-as mb-6 text-center">
+          <h3 className="text-xl font-semibold font-as mb-6 text-center fade-in-slow animate-on-scroll">
             Education & Achievements
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -172,9 +206,7 @@ const AboutSection = () => {
             ].map((item, index) => (
               <div
                 key={item.title}
-                className={`glass-panel p-6 rounded-xl animate-on-scroll ${
-                  isVisible ? "visible" : ""
-                }`}
+                className="glass-panel p-6 rounded-xl fade-in-slow animate-on-scroll"
                 style={{ transitionDelay: `${0.2 + index * 0.1}s` }}
               >
                 <div className="flex items-center space-x-3 mb-3">
@@ -193,7 +225,7 @@ const AboutSection = () => {
 
         {/* Services */}
         <div className="mt-16">
-          <h3 className="text-xl font-semibold mb-6 text-center font-as">
+          <h3 className="text-xl font-semibold mb-6 text-center font-as fade-in-slow animate-on-scroll">
             What I Do
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -237,10 +269,8 @@ const AboutSection = () => {
             ].map((item, index) => (
               <div
                 key={item.title}
-                className={`p-6 rounded-xl border border-border animate-on-scroll ${
-                  isVisible ? "visible" : ""
-                }`}
-                style={{ transitionDelay: `${0.4 + index * 0.1}s` }}
+                className="p-6 rounded-xl border border-border fade-in-slow animate-on-scroll "
+                style={{ transitionDelay: `${0.1 + index * 0.2}s` }}
               >
                 <div className="p-3 bg-primary/10 rounded-lg text-primary w-fit mb-4">
                   <item.icon size={24} />

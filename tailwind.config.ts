@@ -69,6 +69,18 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        "fade-in-left": {
+          "0%": {
+            opacity: "0",
+            visibility: "hidden", // Hide initially
+            transform: "translateX(-50px)", // Start from left
+          },
+          "100%": {
+            opacity: "1",
+            visibility: "visible", // Become visible after fade-in
+            transform: "translateX(0)", // End at its normal position
+          },
+        },
         "pulse-bg": {
           "0%, 100%": { transform: "scale(1)", opacity: "0.4" },
           "50%": { transform: "scale(1.05)", opacity: "0.5" },
@@ -102,6 +114,9 @@ export default {
         "fade-in-slow": {
           "0%": {
             opacity: "0",
+          },
+          "50%": {
+            opacity: "0.5",
           },
           "100%": {
             opacity: "1",
@@ -148,6 +163,7 @@ export default {
         },
       },
       animation: {
+        "fade-in-left": "fade-in-left 1.5s ease-in-out forwards",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "fade-in": "fade-in 0.5s ease-out forwards",
