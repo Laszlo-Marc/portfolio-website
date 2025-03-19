@@ -169,7 +169,7 @@ const HeroSection = () => {
             whileHover="hover"
             className="w-full sm:w-auto"
           >
-            <a href="/Resume-Laszlo-Marc.pdf" target="_blank">
+            <a href="/Marc-Laszlo-CV.pdf" target="_blank">
               <Button
                 size="lg"
                 className="relative overflow-hidden group w-full sm:w-auto"

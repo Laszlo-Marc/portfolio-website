@@ -37,7 +37,24 @@ const SkillsSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
-  // Intersection Observer to detect when the section is visible
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  // Auto-scroll effect for mobile carousel
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (scrollRef.current) {
+        scrollRef.current.scrollLeft += 1; // Adjust speed here
+        if (
+          scrollRef.current.scrollLeft >=
+          scrollRef.current.scrollWidth - scrollRef.current.clientWidth
+        ) {
+          scrollRef.current.scrollLeft = 0; // Loop back to start
+        }
+      }
+    }, 30); // Adjust interval speed
+
+    return () => clearInterval(interval);
+  }, []);
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -68,19 +85,17 @@ const SkillsSection = () => {
 
       {/* Desktop Grid */}
       <div
-        className="hidden md:grid grid-cols-4 lg:grid-cols-5 gap-6 animate-on-scroll fade-in-slow"
-        style={{
-          animationDelay: "0.2", // Slight delay for each card
-        }}
+        className={`hidden md:grid grid-cols-4 lg:grid-cols-5 gap-6 animate-on-scroll fade-in-slow ${
+          isVisible ? "visible" : "hidden"
+        }`}
+        style={{ animationDelay: "0.2s" }}
       >
         {skills.map((skill, index) => (
           <div
             key={skill.name}
-            className={`flex flex-col items-center justify-center bg-secondary p-4 rounded-xl shadow-md hover:scale-105 transition-transform duration-300 ${
-              isVisible ? `animate-fade-in-left` : "opacity-0" // Make it invisible initially
-            }`}
+            className="flex flex-col items-center justify-center bg-secondary p-4 rounded-xl shadow-md hover:scale-105 transition-transform duration-300 animate-on-scroll fade-in-slow"
             style={{
-              animationDelay: `${0.5 + index * 0.3}s`, // Slight delay for each card
+              animationDelay: `${0.5 + index * 0.3}s`,
             }}
           >
             <img
@@ -96,7 +111,7 @@ const SkillsSection = () => {
       </div>
       {/* Mobile Carousel */}
       <div
-        ref={sectionRef}
+        ref={scrollRef}
         className="md:hidden flex gap-6 overflow-x-auto scrollbar-hide py-4"
       >
         {skills.map((skill, index) => (
