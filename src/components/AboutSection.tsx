@@ -76,7 +76,7 @@ const AboutSection = () => {
     <section
       id="about"
       ref={sectionRef}
-      className="py-10 md:py-12 relative overflow-hidden"
+      className="py-4 md:py-2 relative overflow-hidden"
     >
       {/* Background accent */}
       <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 z-0" />

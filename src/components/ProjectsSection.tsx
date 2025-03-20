@@ -8,6 +8,7 @@ import insta from "../assets/images/insta.png";
 import javaLogo from "../assets/images/java.webp";
 import portfolio from "../assets/images/site.png";
 import ubb from "../assets/images/ubb-cluj.png";
+import tcLogo from "../assets/logos/logo-tc.svg";
 const projects = [
   {
     title: "AI-Powered Dental App",
@@ -73,6 +74,14 @@ const projects = [
     image: javaLogo,
     tags: ["Java"],
     githubUrl: "https://github.com/Laszlo-Marc/Toy-Language-Interpreter",
+  },
+  {
+    title: "Trauma Center Website Development",
+    description:
+      "Developed and currently working on the website traumacenter.ro for the Psychotherapy Center Trauma Center, Cluj-Napoca. The website was built using a custom theme in WordPress.",
+    image: tcLogo,
+    tags: ["WordPress Development", "Avada Theme"],
+    liveUrl: "https://traumacenter.ro/",
   },
 ];
 
@@ -154,21 +163,23 @@ const ProjectsSection = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                   <div className="space-x-2">
-                    <Button
-                      size="sm"
-                      variant="secondary"
-                      className="h-8 gap-1"
-                      asChild
-                    >
-                      <a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                    {project.githubUrl && (
+                      <Button
+                        size="sm"
+                        variant="secondary"
+                        className="h-8 gap-1"
+                        asChild
                       >
-                        <Github size={14} />
-                        <span>Code</span>
-                      </a>
-                    </Button>
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <Github size={14} />
+                          <span>Code</span>
+                        </a>
+                      </Button>
+                    )}
                     {project.liveUrl && (
                       <Button
                         size="sm"

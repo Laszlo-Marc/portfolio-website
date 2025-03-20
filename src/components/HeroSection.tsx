@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const HeroSection = () => {
@@ -211,42 +211,6 @@ const HeroSection = () => {
             </Button>
           </motion.div>
         </motion.div>
-      </div>
-
-      <div className="absolute bottom-10 left-0 right-0 flex justify-center items-center">
-        <motion.button
-          onClick={scrollDown}
-          className="flex flex-col justify-center items-center text-muted-foreground hover:text-foreground transition-colors"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 2 }}
-          whileHover={{
-            scale: 1.1,
-            transition: { type: "spring", stiffness: 400, damping: 10 },
-          }}
-          aria-label="Scroll down"
-        >
-          <motion.span
-            className="text-sm font-medium mb-1 opacity-70 text-center"
-            animate={{ y: [0, 5, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-          >
-            Scroll
-          </motion.span>
-          <motion.div
-            animate={{
-              y: [0, 8, 0],
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              repeatType: "loop",
-            }}
-            className="flex justify-center"
-          >
-            <ChevronDown size={24} />
-          </motion.div>
-        </motion.button>
       </div>
     </section>
   );
