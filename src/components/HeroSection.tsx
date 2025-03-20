@@ -190,7 +190,6 @@ const HeroSection = () => {
             variants={buttonHoverVariants}
             initial="initial"
             whileHover="hover"
-            className="w-full sm:w-auto"
           >
             <Button
               variant="outline"
@@ -214,7 +213,6 @@ const HeroSection = () => {
         </motion.div>
       </div>
 
-      {/* Fixed scroll indicator positioning */}
       <div className="absolute bottom-10 left-0 right-0 flex justify-center items-center">
         <motion.button
           onClick={scrollDown}

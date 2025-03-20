@@ -76,7 +76,7 @@ const AboutSection = () => {
     <section
       id="about"
       ref={sectionRef}
-      className="py-20 md:py-28 relative overflow-hidden"
+      className="py-10 md:py-12 relative overflow-hidden"
     >
       {/* Background accent */}
       <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 z-0" />
@@ -111,7 +111,7 @@ const AboutSection = () => {
               }}
               className={`animate-on-scroll ${
                 isVisible ? "visible" : ""
-              } text-muted-foreground mb-4 text-lg font-montserratLight fade-in-slow`}
+              } text-section mb-4 text-lg font-montserratLight fade-in-slow`}
             >
               I'm a final-year Computer Science at Babes-Bolyai University
               student with a passion for building high-performance, scalable web
@@ -126,7 +126,7 @@ const AboutSection = () => {
               }}
               className={`animate-on-scroll ${
                 isVisible ? "visible" : ""
-              } text-muted-foreground mb-4 text-lg font-montserratLight fade-in-slow`}
+              } text-section mb-4 text-lg font-montserratLight fade-in-slow`}
             >
               My academic journey has equipped me with strong foundations in
               algorithms, data structures, and software engineering principles,
@@ -140,7 +140,7 @@ const AboutSection = () => {
               }}
               className={`animate-on-scroll ${
                 isVisible ? "visible" : ""
-              } text-muted-foreground mb-4 text-lg font-montserratLight fade-in-slow`}
+              } text-section mb-4 text-lg font-montserratLight fade-in-slow`}
             >
               Beyond technical skills, I bring a strong problem-solving mindset,
               adaptability, and great communication skills to the table,
@@ -153,7 +153,7 @@ const AboutSection = () => {
               }}
               className={`animate-on-scroll ${
                 isVisible ? "visible" : ""
-              } text-muted-foreground mb-4 text-lg font-montserratLight fade-in-slow`}
+              } text-section mb-4 text-lg font-montserratLight fade-in-slow`}
             >
               I’m looking for opportunities in frontend development, full-stack
               development, web development, or software engineering, where I can
@@ -206,16 +206,16 @@ const AboutSection = () => {
             ].map((item, index) => (
               <div
                 key={item.title}
-                className="glass-panel p-6 rounded-xl fade-in-slow animate-on-scroll"
+                className="glass-panel text p-6 rounded-xl animate-on-scroll fade-in-slow"
                 style={{ transitionDelay: `${0.2 + index * 0.1}s` }}
               >
                 <div className="flex items-center space-x-3 mb-3">
-                  <div className="p-2 bg-primary/10 rounded-lg text-primary">
+                  <div className="p-2 bg-primary/10 rounded-lg text-primary text-white">
                     <item.icon size={20} />
                   </div>
                   <h4 className="font-medium font-montserrat">{item.title}</h4>
                 </div>
-                <p className="text-muted-foreground text-sm font-montserratLight font-bold">
+                <p className="text-sm font-montserratLight font-bold ">
                   {item.description}
                 </p>
               </div>

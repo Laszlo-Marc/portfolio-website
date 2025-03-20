@@ -196,7 +196,7 @@ const ProjectsSection = () => {
                     {project.title}
                   </h3>
                 </div>
-                <p className="text-muted-foreground text-sm mb-4 font-montserratLight">
+                <p className=" text-sm mb-4 font-montserratLight text ">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
@@ -204,7 +204,7 @@ const ProjectsSection = () => {
                     <Badge
                       key={tag}
                       variant="secondary"
-                      className="font-normal text-xs"
+                      className="font-normal text-xs "
                     >
                       {tag}
                     </Badge>

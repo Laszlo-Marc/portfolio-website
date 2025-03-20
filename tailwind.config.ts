@@ -161,6 +161,7 @@ export default {
           },
           "100%": { transform: "translate(0, 0) scale(1)", opacity: "0.3" },
         },
+       
       },
       animation: {
         "fade-in-left": "fade-in-left 1.5s ease-in-out forwards",
@@ -173,6 +174,7 @@ export default {
         "blur-in": "blur-in 0.8s ease-out forwards",
         "pulse-bg": "pulse-bg 8s ease-in-out infinite",
         "parallax-move": "parallax-move 6s ease-in-out infinite reverse",
+       
       },
       fontFamily: {
         sans: ["Inter", "sans-serif"],
