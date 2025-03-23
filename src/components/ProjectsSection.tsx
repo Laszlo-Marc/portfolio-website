@@ -8,7 +8,8 @@ import insta from "../assets/images/insta.png";
 import javaLogo from "../assets/images/java.webp";
 import portfolio from "../assets/images/site.png";
 import ubb from "../assets/images/ubb-cluj.png";
-import tcLogo from "../assets/logos/logo-tc.svg";
+import tcLogo from "../assets/logos/logoTC.jpeg";
+
 const projects = [
   {
     title: "AI-Powered Dental App",
@@ -152,7 +153,7 @@ const ProjectsSection = () => {
               className={`glass-panel rounded-xl overflow-hidden border border-white/30 group hover:shadow-lg transition-all duration-300 animate-on-scroll ${
                 isVisible ? "visible" : ""
               }`}
-              style={{ transitionDelay: `${0.3 + index * 0.5}s` }}
+              style={{ transitionDelay: `${0.2 + index * 0.3}s` }}
             >
               <div className="relative overflow-hidden aspect-[16/9]">
                 <img

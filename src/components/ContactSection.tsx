@@ -256,7 +256,7 @@ const ContactSection = () => {
                   htmlFor="email"
                   className="block text-sm font-medium mb-1 font-montserratBold animate-on-scroll fade-in-slow"
                   style={{
-                    transitionDelay: "0.4s",
+                    transitionDelay: "0.3s",
                   }}
                 >
                   Your Email
@@ -281,7 +281,7 @@ const ContactSection = () => {
                   htmlFor="message"
                   className="block text-sm font-medium mb-1 font-montserratBold animate-on-scroll fade-in-slow"
                   style={{
-                    transitionDelay: "0.6s",
+                    transitionDelay: "0.5s",
                   }}
                 >
                   Your Message
@@ -306,7 +306,7 @@ const ContactSection = () => {
               disabled={isSubmitting}
               className="w-full group animate-on-scroll fade-in-slow"
               style={{
-                transitionDelay: "0.8s",
+                transitionDelay: "0.7s",
               }}
             >
               {isSubmitting ? (

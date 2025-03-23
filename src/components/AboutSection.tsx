@@ -107,7 +107,7 @@ const AboutSection = () => {
             <p
               style={{
                 animationPlayState: isVisible ? "running" : "paused",
-                transitionDelay: "0.3s",
+                transitionDelay: "0.2s",
               }}
               className={`animate-on-scroll ${
                 isVisible ? "visible" : ""
@@ -122,7 +122,7 @@ const AboutSection = () => {
             <p
               style={{
                 animationPlayState: isVisible ? "running" : "paused",
-                transitionDelay: "0.5s",
+                transitionDelay: "0.4s",
               }}
               className={`animate-on-scroll ${
                 isVisible ? "visible" : ""
@@ -136,7 +136,7 @@ const AboutSection = () => {
             <p
               style={{
                 animationPlayState: isVisible ? "running" : "paused",
-                transitionDelay: "0.7s",
+                transitionDelay: "0.6s",
               }}
               className={`animate-on-scroll ${
                 isVisible ? "visible" : ""
@@ -149,7 +149,7 @@ const AboutSection = () => {
             <p
               style={{
                 animationPlayState: isVisible ? "running" : "paused",
-                transitionDelay: "1.0s",
+                transitionDelay: "0.8s",
               }}
               className={`animate-on-scroll ${
                 isVisible ? "visible" : ""
@@ -207,7 +207,7 @@ const AboutSection = () => {
               <div
                 key={item.title}
                 className="glass-panel text p-6 rounded-xl animate-on-scroll fade-in-slow"
-                style={{ transitionDelay: `${0.2 + index * 0.1}s` }}
+                style={{ transitionDelay: `${0.1 + index * 0.1}s` }}
               >
                 <div className="flex items-center space-x-3 mb-3">
                   <div className="p-2 bg-primary/10 rounded-lg text-primary text-white">
