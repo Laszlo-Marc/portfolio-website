@@ -6,10 +6,11 @@ import dentalImage from "../assets/images/dental-app.png";
 import hangmanImage from "../assets/images/hangman.png";
 import insta from "../assets/images/insta.png";
 import javaLogo from "../assets/images/java.webp";
+import mba from "../assets/images/main-mba.jpg";
+import mainBA from "../assets/images/mainBA.png";
 import portfolio from "../assets/images/site.png";
 import ubb from "../assets/images/ubb-cluj.png";
 import tcLogo from "../assets/logos/logoTC.jpeg";
-
 const projects = [
   {
     title: "AI-Powered Dental App",
@@ -59,6 +60,22 @@ const projects = [
     githubUrl: "https://github.com/Laszlo-Marc/university_work",
   },
   {
+    title: "Fullstack Budgeting WebApp",
+    description:
+      "A fullstack budgeting web application with authentication and session management that allows users to track their expenses.",
+    image: mainBA,
+    tags: [
+      "React",
+      "TypeScript",
+      "JavaScript",
+      "Node.js",
+      "MongoDB",
+      "Express.js",
+    ],
+    githubUrl: "https://github.com/Laszlo-Marc/budgeting-webapp-full",
+  },
+
+  {
     title: "Instagram Home Page Clone",
     description:
       "A clone of Instagram's home page made with HTML, CSS and JavaScript.",
@@ -83,6 +100,14 @@ const projects = [
     image: tcLogo,
     tags: ["WordPress Development", "Avada Theme"],
     liveUrl: "https://traumacenter.ro/",
+  },
+  {
+    title: "Fullstack Budgeting Mobile App",
+    description:
+      "A fullstack budgeting mobile app with a user friendly UI that facilitates expense tracking.",
+    image: mba,
+    tags: ["React Native", "TypeScript", "JavaScript", "Node.js", "Expo"],
+    githubUrl: "https://github.com/Laszlo-Marc/mobile-budgeting-app",
   },
 ];
 
