@@ -16,7 +16,7 @@ const projects = [
     description:
       "A fullstack mobile finance app with a user friendly UI that facilitates transaction management, goals and budgets setting and tracking, and comprehensive analytics.",
     image: mba,
-    tags: ["React Native", "TypeScript", "JavaScript", "Node.js", "Expo"],
+    tags: ["React Native", "FastAPI", "Supabase", "Expo"],
     githubUrl: "https://github.com/Laszlo-Marc/coinwise-finance-app",
   },
   {
