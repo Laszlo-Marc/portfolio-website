@@ -113,11 +113,11 @@ const AboutSection = () => {
                 isVisible ? "visible" : ""
               } text-section mb-4 text-lg font-montserratLight fade-in-slow`}
             >
-              I'm a final-year Computer Science at Babes-Bolyai University
-              student with a passion for building high-performance, scalable web
-              applications. With expertise in frontend, full-stack, and software
-              development, I specialize in React, TypeScript and Node.js for
-              creating seamless and user-friendly digital experiences.
+              I’m a Computer Science graduate from UBB with a strong focus on
+              building scalable, high-performance web and mobile applications. I
+              specialize in React, TypeScript, and Node.js, crafting seamless
+              digital experiences that balance clean design with technical
+              efficiency.
             </p>
             <p
               style={{
@@ -128,10 +128,9 @@ const AboutSection = () => {
                 isVisible ? "visible" : ""
               } text-section mb-4 text-lg font-montserratLight fade-in-slow`}
             >
-              My academic journey has equipped me with strong foundations in
-              algorithms, data structures, and software engineering principles,
-              while my personal projects have honed my skills in modern web
-              technologies.
+              Beyond full-stack development, I enjoy creating websites for
+              businesses with SEO, performance, and conversion in mind—ensuring
+              not just functionality, but measurable results.
             </p>
             <p
               style={{
@@ -142,37 +141,25 @@ const AboutSection = () => {
                 isVisible ? "visible" : ""
               } text-section mb-4 text-lg font-montserratLight fade-in-slow`}
             >
-              Beyond technical skills, I bring a strong problem-solving mindset,
-              adaptability, and great communication skills to the table,
-              ensuring that I add value to every project I work on.
+              My academic background provided a solid foundation in algorithms,
+              data structures, and software engineering principles, while
+              hands-on projects have deepened my expertise in modern web
+              technologies.
             </p>
-            <p
-              style={{
-                animationPlayState: isVisible ? "running" : "paused",
-                transitionDelay: "0.8s",
+
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById("contact")?.scrollIntoView({
+                  behavior: "smooth",
+                });
               }}
-              className={`animate-on-scroll ${
-                isVisible ? "visible" : ""
-              } text-section mb-4 text-lg font-montserratLight fade-in-slow`}
+              className="flex items-center text-lg font-semibold text-primary hover:text-blue-600 transition-colors relative py-2 group animate-fade-in-slow"
             >
-              I’m looking for opportunities in frontend development, full-stack
-              development, web development, or software engineering, where I can
-              apply my expertise, continue learning, and make a meaningful
-              impact.
-              <button
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.getElementById("contact")?.scrollIntoView({
-                    behavior: "smooth",
-                  });
-                }}
-                className="flex items-center text-lg font-semibold text-primary hover:text-blue-600 transition-colors relative py-2 group animate-fade-in-slow"
-              >
-                Let's Connect
-                <ArrowRight className="w-5 h-5 ml-2" />
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full" />
-              </button>
-            </p>
+              Let's Connect
+              <ArrowRight className="w-5 h-5 ml-2" />
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full" />
+            </button>
           </div>
 
           {/* Skills */}
@@ -190,7 +177,7 @@ const AboutSection = () => {
                 icon: BookOpen,
                 title: "BSc in Computer Science",
                 description:
-                  "Babes-Bolyai University, Cluj-Napoca, Expected graduation in 2025",
+                  "Babes-Bolyai University, Cluj-Napoca, graduated July 2025",
               },
               {
                 icon: Trophy,

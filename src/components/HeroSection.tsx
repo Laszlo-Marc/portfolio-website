@@ -142,7 +142,7 @@ const HeroSection = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6 }}
         >
-          Fullstack Developer & CS Student
+          Fullstack Developer
         </motion.h2>
 
         <motion.p
