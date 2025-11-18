@@ -163,28 +163,32 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1 }}
         >
-          <motion.div
-            variants={buttonHoverVariants}
-            initial="initial"
-            whileHover="hover"
-            className="w-full sm:w-auto"
-          >
-            <a href="/Resume - Marc Laszlo Lucian.pdf" target="_blank">
-              <Button
-                size="lg"
-                className="relative overflow-hidden group w-full sm:w-auto"
-              >
-                <span className="relative z-10">View My Resume</span>
-                <ArrowRight className="ml-2 h-4 w-4 relative z-10 group-hover:translate-x-1 transition-transform" />
-                <motion.span
-                  className="absolute inset-0 bg-primary/20"
-                  initial={{ x: "-100%" }}
-                  whileHover={{ x: "0%" }}
-                  transition={{ duration: 0.3 }}
-                />
-              </Button>
-            </a>
-          </motion.div>
+         <motion.div
+  variants={buttonHoverVariants}
+  initial="initial"
+  whileHover="hover"
+  className="w-full sm:w-auto"
+>
+  <a 
+    href="/Resume.pdf" 
+    download="Resume.pdf"
+  >
+    <Button
+      size="lg"
+      className="relative overflow-hidden group w-full sm:w-auto"
+    >
+      <span className="relative z-10">Download My Resume</span>
+      <ArrowRight className="ml-2 h-4 w-4 relative z-10 group-hover:translate-x-1 transition-transform" />
+      <motion.span
+        className="absolute inset-0 bg-primary/20"
+        initial={{ x: "-100%" }}
+        whileHover={{ x: "0%" }}
+        transition={{ duration: 0.3 }}
+      />
+    </Button>
+  </a>
+</motion.div>
+
 
           <motion.div
             variants={buttonHoverVariants}
