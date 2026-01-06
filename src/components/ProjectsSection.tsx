@@ -10,7 +10,25 @@ import javaLogo from "../assets/images/java.webp";
 import portfolio from "../assets/images/site.png";
 import ubb from "../assets/images/ubb-cluj.png";
 import tcLogo from "../assets/logos/logoTC.jpeg";
+import elfalaf from "../assets/images/elfalaf-project.png";
 const projects = [
+  {
+    title: "El Falaf Website",
+    description:
+      "A modern, fully custom, responsive website for El Falaf, a middle eastern frozen food company.",
+    image: elfalaf,
+    tags: ["Next.js", "TypeScript", "Vercel"],
+    githubUrl: "https://github.com/Laszlo-Marc/elfalaf",
+    liveUrl: "https://elfalaf.vercel.app",
+  },
+  {
+    title: "Trauma Center Website Development",
+    description:
+      "Redesigned and developed the website for Trauma Center, a psychotherapy center in Cluj-Napoca. The website was built using a custom theme in WordPress.",
+    image: tcLogo,
+    tags: ["WordPress Development", "Avada Theme"],
+    liveUrl: "https://traumacenter.ro/",
+  },
   {
     title: "CoinWise Mobile Finance App",
     description:
@@ -83,15 +101,6 @@ const projects = [
     tags: ["HTML & CSS", "JavaScript"],
     githubUrl: "https://github.com/Laszlo-Marc/intagram_homepage_frontend",
     liveUrl: "https://intagram-homepage-frontend.vercel.app/",
-  },
-
-  {
-    title: "Trauma Center Website Development",
-    description:
-      "Developed and currently working on the website traumacenter.ro for the Psychotherapy Center Trauma Center, Cluj-Napoca. The website was built using a custom theme in WordPress.",
-    image: tcLogo,
-    tags: ["WordPress Development", "Avada Theme"],
-    liveUrl: "https://traumacenter.ro/",
   },
 ];
 
