@@ -18,8 +18,7 @@ const projects = [
       "A modern, fully custom, responsive website for El Falaf, a middle eastern frozen food company.",
     image: elfalaf,
     tags: ["Next.js", "TypeScript", "Vercel"],
-    githubUrl: "https://github.com/Laszlo-Marc/elfalaf",
-    liveUrl: "https://elfalaf.vercel.app",
+    liveUrl: "https://elfalaf.ro",
   },
   {
     title: "Trauma Center Website Development",
@@ -116,7 +115,7 @@ const ProjectsSection = () => {
           observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     if (sectionRef.current) {
