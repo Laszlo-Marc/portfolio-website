@@ -7,7 +7,7 @@ import dentalImage from "../assets/images/dental-app.png";
 import adriana from "../assets/images/adriana.png";
 import clujaudit from "../assets/images/clujaudit.png";
 import ubb from "../assets/images/ubb-cluj.png";
-import tcLogo from "../assets/logos/trauam-center.jpg";
+import tcLogo from "../assets/images/trauma-center.png";
 import elfalaf from "../assets/images/elfalaf-project.png";
 const projects = [
   {
@@ -15,7 +15,7 @@ const projects = [
     description:
       "A modern, fully custom, responsive website for CLUJAUDIT SRL, an accounting and financial consulting company.",
     image: clujaudit,
-    tags: ["Next.js", "TypeScript", "Vercel"],
+    tags: ["Next.js", "TypeScript", "Vercel", "Tailwind CSS"],
     liveUrl: "https://clujaudit.ro",
   },
   {
@@ -23,15 +23,15 @@ const projects = [
     description:
       "A modern, fully custom, responsive website for Adriana Laszlo, integrative psychotherapist, AF-EMDR specialist and founder of Trauma Center",
     image: adriana,
-    tags: ["Next.js", "TypeScript", "Vercel"],
+    tags: ["Next.js", "TypeScript", "Vercel", "Tailwind CSS"],
     liveUrl: "https://elfalaf.ro",
   },
   {
     title: "Trauma Center Website Development",
     description:
-      "Redesigned and developed the website for Trauma Center, a psychotherapy center in Cluj-Napoca. The website was built using a custom theme in WordPress.",
+      "Redesigned and developed the website for Trauma Center, a psychotherapy center in Cluj-Napoca.",
     image: tcLogo,
-    tags: ["WordPress Development", "Avada Theme"],
+    tags: ["Next.js", "TypeScript", "Vercel", "Tailwind CSS"],
     liveUrl: "https://traumacenter.ro/",
   },
   {
@@ -39,7 +39,7 @@ const projects = [
     description:
       "A modern, fully custom, responsive website for El Falaf, a middle eastern frozen food company.",
     image: elfalaf,
-    tags: ["Next.js", "TypeScript", "Vercel"],
+    tags: ["Next.js", "TypeScript", "Vercel", "Tailwind CSS"],
     liveUrl: "https://elfalaf.ro",
   },
 
