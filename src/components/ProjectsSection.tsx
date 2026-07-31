@@ -7,7 +7,7 @@ import dentalImage from "../assets/images/dental-app.png";
 import adriana from "../assets/images/adriana.png";
 import clujaudit from "../assets/images/clujaudit.png";
 import ubb from "../assets/images/ubb-cluj.png";
-import tcLogo from "../assets/logos/trauam-center.jpeg";
+import tcLogo from "../assets/logos/trauam-center.jpg";
 import elfalaf from "../assets/images/elfalaf-project.png";
 const projects = [
   {
