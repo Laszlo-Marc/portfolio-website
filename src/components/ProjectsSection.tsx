@@ -4,19 +4,25 @@ import { ArrowUpRight, ExternalLink, Github } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import mba from "../assets/images/coinwise.png";
 import dentalImage from "../assets/images/dental-app.png";
-import hangmanImage from "../assets/images/hangman.png";
-import insta from "../assets/images/insta.png";
-import javaLogo from "../assets/images/java.webp";
-import portfolio from "../assets/images/site.png";
+import adriana from "../assets/images/adriana.png";
+import clujaudit from "../assets/images/clujaudit.png";
 import ubb from "../assets/images/ubb-cluj.png";
-import tcLogo from "../assets/logos/logoTC.jpeg";
+import tcLogo from "../assets/logos/trauam-center.jpeg";
 import elfalaf from "../assets/images/elfalaf-project.png";
 const projects = [
   {
-    title: "El Falaf Website",
+    title: "Cluj Audit Website",
     description:
-      "A modern, fully custom, responsive website for El Falaf, a middle eastern frozen food company.",
-    image: elfalaf,
+      "A modern, fully custom, responsive website for CLUJAUDIT SRL, an accounting and financial consulting company.",
+    image: clujaudit,
+    tags: ["Next.js", "TypeScript", "Vercel"],
+    liveUrl: "https://clujaudit.ro",
+  },
+  {
+    title: "Adriana Laszlo Website",
+    description:
+      "A modern, fully custom, responsive website for Adriana Laszlo, integrative psychotherapist, AF-EMDR specialist and founder of Trauma Center",
+    image: adriana,
     tags: ["Next.js", "TypeScript", "Vercel"],
     liveUrl: "https://elfalaf.ro",
   },
@@ -28,6 +34,15 @@ const projects = [
     tags: ["WordPress Development", "Avada Theme"],
     liveUrl: "https://traumacenter.ro/",
   },
+  {
+    title: "El Falaf Website",
+    description:
+      "A modern, fully custom, responsive website for El Falaf, a middle eastern frozen food company.",
+    image: elfalaf,
+    tags: ["Next.js", "TypeScript", "Vercel"],
+    liveUrl: "https://elfalaf.ro",
+  },
+
   {
     title: "CoinWise Mobile Finance App",
     description:
@@ -66,40 +81,6 @@ const projects = [
       "Assembly",
     ],
     githubUrl: "https://github.com/Laszlo-Marc/university_work",
-  },
-  {
-    title: "Toy Language Interpreter",
-    description:
-      "Developed a custom interpreter supporting conditionals, loops, concurrency, and data types.",
-    image: javaLogo,
-    tags: ["Java"],
-    githubUrl: "https://github.com/Laszlo-Marc/Toy-Language-Interpreter",
-  },
-  {
-    title: "Hangman Game in React",
-    description:
-      "The classic hangman word-guessing game, featuring a responsive design and custom animations.",
-    image: hangmanImage,
-    tags: ["React", "Vite", "TypeScript", "JavaScript"],
-    githubUrl: "https://github.com/Laszlo-Marc/hangman-react-ts",
-    liveUrl: "https://hangman-react-ts-gamma.vercel.app/",
-  },
-  {
-    title: "Portfolio Website",
-    description:
-      "This website, built with React, Vite, TypeScript and Tailwind CSS, showcases my projects and skills.",
-    image: portfolio,
-    tags: ["React", "Tailwind CSS", "TypeScript", "Vite"],
-    githubUrl: "https://github.com/Laszlo-Marc/portfolio-website",
-  },
-  {
-    title: "Instagram Home Page Clone",
-    description:
-      "A clone of Instagram's home page made with HTML, CSS and JavaScript.",
-    image: insta,
-    tags: ["HTML & CSS", "JavaScript"],
-    githubUrl: "https://github.com/Laszlo-Marc/intagram_homepage_frontend",
-    liveUrl: "https://intagram-homepage-frontend.vercel.app/",
   },
 ];
 
